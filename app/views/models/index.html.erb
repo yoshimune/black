@@ -1,0 +1,35 @@
+<h1>Listing models</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Article</th>
+      <th>Title</th>
+      <th>Articlebody</th>
+      <th>Bigindate</th>
+      <th>Enddate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @models.each do |model| %>
+      <tr>
+        <td><%= model.article %></td>
+        <td><%= model.title %></td>
+        <td><%= model.articlebody %></td>
+        <td><%= model.bigindate %></td>
+        <td><%= model.enddate %></td>
+        <td><%= link_to 'Show', model %></td>
+        <td><%= link_to 'Edit', edit_model_path(model) %></td>
+        <td><%= link_to 'Destroy', model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Model', new_model_path %>

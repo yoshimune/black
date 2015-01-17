@@ -1,0 +1,21 @@
+<h1>なんかタイトル</h1>
+<div id="main">
+  <h3>DBからとったデータを表示するよ</h3>
+  
+  <table>
+    <thead>
+      <th>タイトル</th>
+      <th>本文</th>
+      <th>投稿日時</th>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.articlebody %></td>
+          <td><%= article.bigindate %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
